@@ -34,13 +34,13 @@ public class StudentDaoTest {
 		}
 		Assert.assertNotNull(lists);
 	}
-/*	@Test
+	@Test
 	public void testInsertStudent() {
-		Student student = new Student(4, "조시은", "chwhse@gmail.com", new Date());
+		Student student = new Student(5, "이교민", "teacher@gmail.com", new Date());
 		
 		int res = studentService.insertStudent(student);
 		
 		Assert.assertEquals(1, res);
-	}*/
+	}
 
 }
