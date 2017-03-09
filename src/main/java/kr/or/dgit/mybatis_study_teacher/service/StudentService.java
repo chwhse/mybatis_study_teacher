@@ -22,6 +22,14 @@ public class StudentService {
 		StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
 	//	sqlSession.close();
 		return studentDao.selelctStudentByAll();
-		
 	}
+	
+	public int insertStudent(Student student){
+		SqlSession sqlSession = MybatisSqlSessionFactory.openSession();
+		StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
+		int res = studentDao.insertStudent(student);
+		sqlSession.commit();  // 꼭 커밋해야 삽입이 됨.
+		return res;
+	}
+	
 }

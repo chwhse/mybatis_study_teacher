@@ -2,6 +2,7 @@ package mybatis_study_teacher;
 
 import static org.junit.Assert.*;
 
+import java.util.Date;
 import java.util.List;
 
 import org.junit.AfterClass;
@@ -26,12 +27,20 @@ public class StudentDaoTest {
 	}
 
 	@Test
-	public void test() {
+	public void testSelectStudentByAll() {
 		List<Student> lists = studentService.selectStudentByAll();
 		for(Student s : lists){
 			System.out.println(s);
 		}
 		Assert.assertNotNull(lists);
 	}
+/*	@Test
+	public void testInsertStudent() {
+		Student student = new Student(4, "조시은", "chwhse@gmail.com", new Date());
+		
+		int res = studentService.insertStudent(student);
+		
+		Assert.assertEquals(1, res);
+	}*/
 
 }
