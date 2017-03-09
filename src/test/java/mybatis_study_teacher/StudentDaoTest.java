@@ -34,6 +34,7 @@ public class StudentDaoTest {
 		}
 		Assert.assertNotNull(lists);
 	}
+	
 	@Test
 	public void testInsertStudent() {
 		Student student = new Student(5, "이교민", "teacher@gmail.com", new Date());

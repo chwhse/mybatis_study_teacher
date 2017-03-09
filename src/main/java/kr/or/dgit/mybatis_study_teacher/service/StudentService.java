@@ -48,5 +48,13 @@ public class StudentService {
 		return res;
 
 	}
+	public int updateStudent(Student student){
+		SqlSession sqlSession = MybatisSqlSessionFactory.openSession();
+		StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
+		int res = studentDao.updateStudent(student);
+		sqlSession.commit();
+		return res;
+		
+	}
 	
 }

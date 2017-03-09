@@ -21,5 +21,11 @@
 		delete from student
 		where stud_id = #{studId}
 	</delete>
+	
+	<update id="updateStudent" parameterType="Student">
+		update name, email, dob from student
+		set (#{name},#{email},#{dob})
+		where stud_id = #{studId}
+	</update>
 		
 </mapper>
