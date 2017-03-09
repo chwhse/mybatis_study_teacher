@@ -11,5 +11,15 @@
 		insert into student (stud_id, name, email, dob)
 		values (#{studId},#{name},#{email},#{dob})	<!-- rs작업 안해도 됨 -->
 	</insert>
+	
+	<select id="SelectStudentByNo" parameterType="int" resultType="Student"> 
+		select stud_id, name, email, dob from student
+		where stud_id = #{studId}
+	</select>
+	
+	<delete id="deleteStudent" parameterType="int">
+		delete from student
+		where stud_id = #{studId}
+	</delete>
 		
 </mapper>

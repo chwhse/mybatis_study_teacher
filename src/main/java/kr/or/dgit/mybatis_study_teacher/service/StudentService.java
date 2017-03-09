@@ -32,4 +32,21 @@ public class StudentService {
 		return res;
 	}
 	
+	public Student SelectStudentByNo(int no){
+		SqlSession sqlSession = MybatisSqlSessionFactory.openSession();
+		StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
+		
+		
+		return studentDao.SelectStudentByNo(no);
+	}
+	
+	public int deleteStudent(int no){
+		SqlSession sqlSession = MybatisSqlSessionFactory.openSession();
+		StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
+		int res = studentDao.deleteStudent(no);
+		sqlSession.commit();
+		return res;
+
+	}
+	
 }

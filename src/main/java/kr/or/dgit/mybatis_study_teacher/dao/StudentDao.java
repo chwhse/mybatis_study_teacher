@@ -10,7 +10,7 @@ public interface StudentDao {
 	int insertStudent(Student student);
 	
 	Student SelectStudentByNo(int studId);
-/*	int updateStudent(int studNo);
-	int deleteStudent(int studNo);*/
+/*	int updateStudent(int studNo); */
+	int deleteStudent(int studNo);
 	
 }

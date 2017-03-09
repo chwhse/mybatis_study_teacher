@@ -42,5 +42,18 @@ public class StudentDaoTest {
 		
 		Assert.assertEquals(1, res);
 	}
+	
+	@Test
+	public void testSelectByNoStudent() {
+		Student student = studentService.SelectStudentByNo(5);
+		
+		Assert.assertNotNull(student);
+	}
+	@Test
+	public void testDeleteStudent() {
+		int res = studentService.deleteStudent(4);
+				
+		Assert.assertEquals(1, res);
+	}
 
 }
