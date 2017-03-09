@@ -28,6 +28,9 @@ public class StudentDaoTest {
 	@Test
 	public void test() {
 		List<Student> lists = studentService.selectStudentByAll();
+		for(Student s : lists){
+			System.out.println(s);
+		}
 		Assert.assertNotNull(lists);
 	}
 
