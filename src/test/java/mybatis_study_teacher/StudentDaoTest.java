@@ -10,6 +10,7 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import kr.or.dgit.mybatis_study_teacher.dto.PhoneNumber;
 import kr.or.dgit.mybatis_study_teacher.dto.Student;
 import kr.or.dgit.mybatis_study_teacher.service.StudentService;
 
@@ -26,7 +27,7 @@ public class StudentDaoTest {
 		studentService = null;
 	}
 
-	@Test
+/*	@Test
 	public void testSelectStudentByAll() {
 		List<Student> lists = studentService.selectStudentByAll();
 		for(Student s : lists){
@@ -42,19 +43,34 @@ public class StudentDaoTest {
 		int res = studentService.insertStudent(student);
 		
 		Assert.assertEquals(1, res);
-	}
-	
+	}*/
 	@Test
+	public void testDeleteStudent() {
+		int res = studentService.deleteStudent(6);
+				
+		Assert.assertEquals(1, res);
+	}
+	@Test
+	public void insertStudentWithPhone() {
+		Student student = new Student(6, "이승우", "ysw@gmail.com", new Date(), new PhoneNumber("010-2222-2222"));
+		
+		int res = studentService.insertStudentWithPhone(student);
+		
+		Assert.assertEquals(1, res);
+	}
+	@Test
+	public void testUpdateStudent() {
+		Student student = new Student(6, "이승우으", "hahah", new Date(), new PhoneNumber("053", "666", "0000"));
+		int res = studentService.updateStudent(student);
+				
+		Assert.assertEquals(1, res);
+	}
+/*	@Test
 	public void testSelectByNoStudent() {
 		Student student = studentService.SelectStudentByNo(5);
 		
 		Assert.assertNotNull(student);
-	}
-	@Test
-	public void testDeleteStudent() {
-		int res = studentService.deleteStudent(4);
-				
-		Assert.assertEquals(1, res);
-	}
+	}*/
+
 
 }

@@ -12,6 +12,10 @@
 		values (#{studId},#{name},#{email},#{dob})	<!-- rs작업 안해도 됨 -->
 	</insert>
 	
+	<insert id="insertStudentWithPhone" parameterType="Student">
+		insert into student (stud_id, name, email, dob, phone)
+		values (#{studId},#{name},#{email},#{dob},#{phone})	<!-- rs작업 안해도 됨 -->
+	</insert>	
 	<select id="SelectStudentByNo" parameterType="int" resultType="Student"> 
 		select stud_id, name, email, dob from student
 		where stud_id = #{studId}
@@ -23,9 +27,13 @@
 	</delete>
 	
 	<update id="updateStudent" parameterType="Student">
-		update name, email, dob from student
-		set (#{name},#{email},#{dob})
-		where stud_id = #{studId}
+		UPDATE from student
+		SET name=#{name},
+		set email=#{email},
+		set dob = #{dob},
+		set phone=#{phone}
+		WHERE stud_id = #{studId}
+		
 	</update>
 		
 </mapper>
